@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { auth } from '../firebase/firebase.init';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router';
+
 
 const AuthProvider = ( { children } ) => {
 

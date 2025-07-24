@@ -12,6 +12,9 @@ import Register from "./component/Register.jsx";
 import BrowseTask from "./component/BrowseTask.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
 import UserCard from "./component/UserCard.jsx";
+import AddCategory from "./component/AddCategory.jsx";
+import Categories from "./component/Categories.jsx";
+import TaskCards from "./component/TaskCards.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +27,17 @@ const router = createBrowserRouter([
       { path: "addTask", Component: AddTask },
       { path: "browseTask", Component: BrowseTask },
       { path: "user/:email", Component: UserCard },
+      { path: "/addCategory", Component: AddCategory },
+      {
+        path: "/categories",
+        loader: () => fetch("http://localhost:7777/categories"),
+        Component: Categories,
+      },
+      {
+        path: "/tasks",
+        loader: () => fetch("http://localhost:7777/tasks"),
+        Component: TaskCards,
+      },
     ],
   },
 ]);
